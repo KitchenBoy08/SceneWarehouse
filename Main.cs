@@ -1,37 +1,24 @@
 ﻿using MelonLoader;
 
-namespace bonelab_template
-{
-    internal partial class Main : MelonMod
-    {
-        public override void OnEarlyInitializeMelon()
-        {
-            base.OnEarlyInitializeMelon();
-        }
+using SceneWarehouse.Bonemenu;
+using SceneWarehouse.Utilities;
+using SLZ.Marrow.Warehouse;
 
+using System;
+using System.Linq;
+
+namespace SceneWarehouse
+{
+    internal class Main : MelonMod
+    {
         public override void OnInitializeMelon()
         {
-            base.OnInitializeMelon();
+            BonemenuManager.InitializeBoneMenu();
         }
 
         public override void OnLateInitializeMelon()
         {
-            base.OnLateInitializeMelon();
-        }
-
-        public override void OnUpdate()
-        {
-            base.OnUpdate();
-        }
-
-        public override void OnFixedUpdate()
-        {
-            base.OnFixedUpdate();
-        }
-
-        public override void OnLateUpdate()
-        {
-            base.OnLateUpdate();
+            HookGenerator.InitHooks();
         }
     }
 }
